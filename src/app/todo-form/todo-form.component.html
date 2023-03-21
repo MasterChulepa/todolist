@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-xs-12 row justify-content-center">
+    <form class="form" (ngSubmit)="setTodo()" [formGroup] = "form">
+        <div class="row">
+                <mat-form-field class="col-xs-12">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder="Title..." value ='' formControlName = "title" />
+                </mat-form-field>
+                <mat-form-field class="col-xs-12">
+                  <mat-label>Leave a comment</mat-label>
+                  <textarea matInput placeholder="I want to do..." value ='' formControlName = "comment"></textarea>
+                </mat-form-field>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 d-flex justify-content-between">
+                <button type="submit" mat-raised-button color="primary" [disabled] = !form.valid>{{editMode ? 'Change' : 'Add'}}</button>
+                <button type="button" mat-raised-button color="accent" (click) = "form.reset()">Clear</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>

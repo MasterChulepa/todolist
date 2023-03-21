@@ -1,0 +1,6 @@
+<ul>
+  <app-todo 
+  *ngFor="let todo of todos.slice().reverse();" 
+  [todoData]="todo">
+  </app-todo>
+</ul>

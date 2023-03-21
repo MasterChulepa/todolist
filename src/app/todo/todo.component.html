@@ -1,0 +1,29 @@
+<mat-card style="cursor: pointer;" (click) = "onFillForm()">
+  <mat-card-header [ngStyle] = "{
+    'text-decoration': !todoData.accomplished ? 'none': 'line-through'
+  }">
+    <mat-card-title>{{ todoData.title | titlecase }}</mat-card-title>
+    <mat-card-subtitle>{{ todoData.comment }} {{todoData.id}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end"*ngIf="!todoData.accomplished">
+    <button
+      type="buttons"
+      (click)="onAccomplish()"
+      mat-icon-button
+      color="primary"
+      aria-label="Icon button with a succes icon"
+    >
+      <mat-icon>plus_one</mat-icon>
+    </button>
+    <button
+      type="button"
+      (click)="onDelete()"
+      mat-icon-button
+      color="warn"
+      aria-label="Icon button with a delete icon"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
+<br />
